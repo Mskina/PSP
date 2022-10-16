@@ -24,7 +24,7 @@ public class ComprobarLeerNombre {
 
         // El proceso a ejecutar es LeerNombre.java
         // Se le pasa el nombre como tercer argumento
-        ProcessBuilder pb = new ProcessBuilder("java", "LeerNombre.java", "ALEJANDRO DE MI VIDA");
+        ProcessBuilder pb = new ProcessBuilder("java", "LeerNombre.java", "Testeando");
 
         // Se establece el directorio donde se encuentra el ejecutable
         pb.directory(directorio);

@@ -23,7 +23,7 @@ public class PSP01Ejemplo3 {
         File directorio = new File("D:\\GitHub\\PSP\\PSP01\\PSP01Ejemplo2\\src\\psp01ejemplo2");
 
         // El proceso a ejecutar es Ejemplo2
-        ProcessBuilder pb = new ProcessBuilder("java", "PSP01Ejemplo2.java");
+        ProcessBuilder pb = new ProcessBuilder("java", "PSP01Ejemplo3.java");
 
         // Se establece el directorio donde se encuentra el ejecutable
         pb.directory(directorio);
@@ -31,6 +31,22 @@ public class PSP01Ejemplo3 {
 
         // Se ejecuta el proceso
         Process p = pb.start();
+        
+        /**
+         * El método getErrorStream() de Process nos devuelve un stream para
+         * poder leer los errores que se produzcan al lanzar el proceso.
+         * Añadiendo el InputStreat+BufferedReader+InputStreamReader, obtenemos
+         * la salida indicando el error que se ha producido
+         */
+        try {
+            InputStream er = p.getErrorStream();
+            BufferedReader brer = new BufferedReader (new InputStreamReader(er));
+            String liner = null;
+            while ((liner = brer.readLine()) != null)
+                System.out.println("ERROR > " +liner);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
 
         // Obtenemos la salida devuelta por el proceso
         try {
