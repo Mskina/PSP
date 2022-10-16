@@ -27,23 +27,18 @@ public class PSP01Ejercicio06A {
             System.exit(-1);
         }
 
-        FileWriter fw = null;
-        BufferedWriter br = null;
-        
         String rutaSalida = "D:\\GitHub\\PSP\\PSP01\\PSP01Ejercicio06A\\salida.txt";
 
-        try {
-            fw = new FileWriter(rutaSalida);
-            br = new BufferedWriter(fw);
+        // Uso try-with-resources, que non necesita que se pechen os recursos manualmente
+        try (FileWriter fw = new FileWriter(rutaSalida);
+                BufferedWriter br = new BufferedWriter(fw);) {
             for (int i = 0; i < 5; i++) {
                 br.write(args[0]);
                 br.write("\n"); // Salto de liña
             }
-            br.close(); // Llama a flush y después cierra el flujo
+            //br.close(); // Con try-with-resources xaa non é necesario (chamaría a flush y pecharía o fluxo)
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        } 
-        
+        }
     }
-
 }
