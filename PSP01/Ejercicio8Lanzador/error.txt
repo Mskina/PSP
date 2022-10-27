@@ -1,0 +1,4 @@
+texto --> No es palÃ­ndromo
+texto --> No es palÃ­ndromo
+texto --> No es palÃ­ndromo
+palindromia --> No es palÃ­ndromo

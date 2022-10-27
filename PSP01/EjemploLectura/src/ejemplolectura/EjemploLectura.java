@@ -3,38 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejercicio7;
+package ejemplolectura;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Crea un programa Java que lea cadenas desde la entrada estándar hasta
- * escribir un *. A continuación, crea otro programa que ejecute el anterior.
  *
  * @author Iván Estévez Sabucedo
  */
-public class Ejercicio7 {
+public class EjemploLectura {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // TODO code application logic here
         
-        final String STOP = "*";
-
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
         String texto;
         
-        do {
-            System.out.print("Escribe algo:");
+        try {
+            System.out.println("Escribe una cadena...");
             texto = br.readLine();
-            System.out.println("Has escrito... "+texto);
-        } while (!texto.equals(STOP));
-        System.out.println("Fin.");
+            System.out.println("Has escrito: "+texto);
+            isr.close();
+        } catch (Exception e) { e.printStackTrace(); }
     }
-
+    
 }
