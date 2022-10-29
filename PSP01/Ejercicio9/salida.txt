@@ -1,0 +1,5 @@
+Escribe algo:Has escrito... linea1
+Escribe algo:Has escrito... linea2
+Escribe algo:Has escrito... linea3
+Escribe algo:Has escrito... *
+Fin.

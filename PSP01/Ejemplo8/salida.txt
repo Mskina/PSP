@@ -1,0 +1,24 @@
+Microsoft Windows [Versi¢n 10.0.19045.2130]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+D:\GitHub\PSP\PSP01\Ejemplo8>MKDIR NUEVO
+
+D:\GitHub\PSP\PSP01\Ejemplo8>CD NUEVO
+
+D:\GitHub\PSP\PSP01\Ejemplo8\NUEVO>ECHO CREO FICHERO > Mifichero.txt
+
+D:\GitHub\PSP\PSP01\Ejemplo8\NUEVO>DIR
+ El volumen de la unidad D es Datos
+ El n£mero de serie del volumen es: 6C74-594C
+
+ Directorio de D:\GitHub\PSP\PSP01\Ejemplo8\NUEVO
+
+28/10/2022  10:16    <DIR>          .
+28/10/2022  10:16    <DIR>          ..
+28/10/2022  10:16                15 Mifichero.txt
+               1 archivos             15 bytes
+               2 dirs  309.453.918.208 bytes libres
+
+D:\GitHub\PSP\PSP01\Ejemplo8\NUEVO>DIRR
+
+D:\GitHub\PSP\PSP01\Ejemplo8\NUEVO>¨M s? 

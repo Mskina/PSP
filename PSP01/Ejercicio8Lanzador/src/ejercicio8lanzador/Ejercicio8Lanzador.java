@@ -29,34 +29,19 @@ public class Ejercicio8Lanzador {
         File directorio = new File("D:\\GitHub\\PSP\\PSP01\\Ejercicio8\\src\\ejercicio8");
         ProcessBuilder pb = new ProcessBuilder("java", "Ejercicio8.java");
         pb.directory(directorio);
-        Process p = pb.start();
 
+        File fEntrada = new File("origen.txt");
+        File fErr = new File("error.txt");
+
+        pb.redirectInput(ProcessBuilder.Redirect.from(fEntrada));
+        pb.redirectError(ProcessBuilder.Redirect.to(fErr));
+
+        // Salida por pantalla
+        Process p = pb.start();        
         InputStream is = p.getInputStream();
-        OutputStream os = p.getOutputStream();
-        InputStream err = p.getErrorStream();
-
-        FileReader fr = new FileReader("origen.txt");
-
         int c;
-        while ((c = fr.read()) != -1) {
-            os.write(c);
+        while ((c = is.read()) != -1) {
+            System.out.print((char) c);
         }
-        os.close();
-
-        FileWriter fw = new FileWriter("error.txt", true);
-
-        int d;
-        while ((d = err.read()) != -1) {
-            fw.append((char) d);
-        }
-        fw.close();
-        err.close();
-
-        // Comprobación de palíndromos
-        int e;
-        while ((e = is.read()) != -1) {
-            System.out.print((char) e);
-        }
-
     }
 }

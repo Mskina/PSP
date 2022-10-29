@@ -1,0 +1,17 @@
+ El volumen de la unidad D es Datos
+ El n£mero de serie del volumen es: 6C74-594C
+
+ Directorio de D:\GitHub\PSP\PSP01\Ejemplo7
+
+28/10/2022  10:06    <DIR>          .
+28/10/2022  10:06    <DIR>          ..
+28/10/2022  10:06    <DIR>          build
+28/10/2022  10:02             3.609 build.xml
+28/10/2022  10:06                 0 error.txt
+28/10/2022  10:02                85 manifest.mf
+28/10/2022  10:02    <DIR>          nbproject
+28/10/2022  10:06                 0 salida.txt
+28/10/2022  10:02    <DIR>          src
+28/10/2022  10:05    <DIR>          test
+               4 archivos          3.694 bytes
+               6 dirs  309.454.123.008 bytes libres
