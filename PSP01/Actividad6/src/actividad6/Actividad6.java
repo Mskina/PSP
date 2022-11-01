@@ -5,6 +5,8 @@
  */
 package actividad6;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -27,12 +29,15 @@ public class Actividad6 {
         boolean esNumero1 = false;
         boolean esNumero2 = false;
 
-        Scanner scan = new Scanner(System.in);
+        //Scanner scan = new Scanner(System.in);
+        
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
         
         do {
             try {
                 System.out.print("Escribe el número 1: ");
-                num1 = Integer.parseInt(scan.nextLine());
+                num1 = Integer.parseInt(br.readLine());
                 esNumero1 = true;
             } catch (Exception e) {
                 System.out.println("Debes escribir un número.");
@@ -42,7 +47,7 @@ public class Actividad6 {
         do {
             try {
                 System.out.print("Escribe el número 2: ");
-                num2 = Integer.parseInt(scan.nextLine());
+                num2 = Integer.parseInt(br.readLine());
                 esNumero2 = true;
             } catch (Exception e) {
                 System.out.println("Debes escribir un número.");
