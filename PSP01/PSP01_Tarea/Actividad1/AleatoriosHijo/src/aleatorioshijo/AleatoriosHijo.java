@@ -27,14 +27,12 @@ public class AleatoriosHijo {
         // Almacenamos lo que recibimos en un buffer
         BufferedReader br = new BufferedReader(isr);
 
-        String texto; // Variable que emplearemos para almacenar lo recibido
-
         // Clase que genera número aleatorio
         Random r = new Random();
 
         // Bucle infinito en el que se genera un número aleatorio cada vez que se recibe una nueva línea.
         do {
-            texto = br.readLine(); // Leemos lo recibido
+            br.readLine(); // Leemos lo recibido. No lo almacenamos ya que no es necesario.
             System.out.println(r.nextInt(11)); // Generamos un número aleatorio
         } while (true);
     }
