@@ -4,6 +4,8 @@
  */
 package ejercicio2;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * Clase donde reside el método main() que inicia la aplicación
  *
@@ -12,12 +14,55 @@ package ejercicio2;
 public class Main {
 
     /**
-     * Define los parámetros necesarios para construir hilos filósofos.
+     * Define los parámetros necesarios para construir hilos filósofos (ver el
+     * constructor de la clase Filosofo). Se crean los 5 filósofos, y los
+     * inicia.
      *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-    }
 
+        int numFilosofos = 5;
+
+        // Usando el método que indican en la documentación, creo una matriz
+        // en la que establezo, para cada filósofo, qué dos palillos le corresponden
+        int[][] palillosFilosofo = new int[numFilosofos][2]; // 5 filósofos, 2 palillos
+//        palillosFilosofo[0][0] = 0; // Filósofo 1, izq palillo 1
+//        palillosFilosofo[0][1] = 4; // Filósofo 1, der palillo 5
+//        palillosFilosofo[1][0] = 1;
+//        palillosFilosofo[1][1] = 0;
+//        palillosFilosofo[2][0] = 2;
+//        palillosFilosofo[2][1] = 1;
+//        palillosFilosofo[3][0] = 3;
+//        palillosFilosofo[3][1] = 2;
+//        palillosFilosofo[4][0] = 4;
+//        palillosFilosofo[4][1] = 3;
+
+        // En bucle para poder añadir más comensales si así se desease.
+        palillosFilosofo[0][0] = 0;
+        palillosFilosofo[0][1] = numFilosofos - 1;
+
+        for (int i = 1; i < numFilosofos; i++) {
+            palillosFilosofo[i][0] = i;
+            palillosFilosofo[i][1] = i - 1;
+        }
+
+        // Creo un array de semáforos y le establezo su tamaño
+        Semaphore[] palillos = new Semaphore[numFilosofos];
+        for (int i = 0; i < numFilosofos; i++) {
+            // Se inicia a 1 porque el palillo está libre al empezar
+            palillos[i] = new Semaphore(1);
+        }
+
+        // Creo un array de filósofos y le establezco su tamaño
+        Filosofo[] filosofos = new Filosofo[numFilosofos];
+        for (int i = 0; i < numFilosofos; i++) {
+            filosofos[i] = new Filosofo(i, palillos, palillosFilosofo);
+        }
+
+        // Inicio todos los hilos al mismo tiempo
+        for (int i = 0; i < numFilosofos; i++) {
+            filosofos[i].start();
+        }
+    }
 }

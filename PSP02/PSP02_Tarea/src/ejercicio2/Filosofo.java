@@ -4,7 +4,9 @@
  */
 package ejercicio2;
 
+import java.util.Random;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Hilo filósofo. Su método run() realiza un bucle infinito que consite en
@@ -13,6 +15,8 @@ import java.util.concurrent.Semaphore;
  * @author Iván Estévez Sabucedo
  */
 public class Filosofo extends Thread {
+
+    private final Random r = new Random();
 
     private int miIndice;
     private Semaphore[] semaforoPalillo;
@@ -42,7 +46,10 @@ public class Filosofo extends Thread {
      */
     @Override
     public void run() {
-        super.run(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        while (true) {
+            pensar();
+            comer();
+        }
     }
 
     /**
@@ -50,7 +57,12 @@ public class Filosofo extends Thread {
      * Para simular esta actividad, dormirá el hilo un tiempo aleatorio
      */
     public void pensar() {
-
+        try {
+            System.out.println("El filosofo " + miIndice + " esta pensando.");
+            Thread.sleep(r.nextInt(700) + 300);
+        } catch (InterruptedException ex) {
+            System.out.println("Excepción en pensar().");
+        }
     }
 
     /**
@@ -62,7 +74,37 @@ public class Filosofo extends Thread {
      * ' N ' ha terminado de comer', indicando los palillos que se quedan libres
      */
     public void comer() {
+        System.out.println("El filosofo " + miIndice + " esta hambriento.");
 
+        int indicePalilloIzq = palillosFilosofo[miIndice][0];
+        int indicePalilloDer = palillosFilosofo[miIndice][1];
+
+        boolean exito = false;
+        try {
+            while (!exito) {
+                boolean palIzqDispo = semaforoPalillo[indicePalilloIzq].tryAcquire(r.nextInt(2000) + 1000, TimeUnit.MILLISECONDS);
+
+                // Si adquiero el pallilo izquierdo, intento conseguir el derecho
+                if (palIzqDispo) {
+                    boolean palDerDispo = semaforoPalillo[indicePalilloDer].tryAcquire(r.nextInt(2000) + 1000, TimeUnit.MILLISECONDS);
+
+                    // Si en ese tiempo adquiero el palillo derecho, como
+                    if (palDerDispo) {
+                        System.out.println("El filosofo " + miIndice + " esta comiendo.");
+                        Thread.sleep(r.nextInt(700) + 300);
+                        System.out.println("El filosofo " + miIndice + " ha terminado de comer.");
+
+                        semaforoPalillo[indicePalilloIzq].release();
+                        semaforoPalillo[indicePalilloDer].release();
+                        exito = true;
+                    } else {
+                        // Si no he conseguido el palillo derecho, suelto el izquierdo
+                        semaforoPalillo[indicePalilloIzq].release();
+                    }
+                }
+            }
+        } catch (InterruptedException ex) {
+            System.out.println("Error al adquirir los palillos.");
+        }
     }
-
 }
