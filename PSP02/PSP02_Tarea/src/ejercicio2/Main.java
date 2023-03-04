@@ -22,11 +22,20 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        // Se emplea variable por si se quiere variar el comportamiento
         int numFilosofos = 5;
 
-        // Usando el método que indican en la documentación, creo una matriz
-        // en la que establezo, para cada filósofo, qué dos palillos le corresponden
+        // Se podría añadir una comprobación, ya que con 1 filósofo no funcionaría correctamente
+//        if (numFilosofos == 1) {
+//            System.out.println("No se puede realizar con 1 comensal");
+//            System.exit(0);
+//        }
+        
+        // Siguiendo indicaciones de la documentación, creo una matriz
+        // en la que establezo qué dos palillos corresponden a cada filósofo.
+        // MATRIZ
         int[][] palillosFilosofo = new int[numFilosofos][2]; // 5 filósofos, 2 palillos
+//        Asignación inicial: manual para 5 filósofos
 //        palillosFilosofo[0][0] = 0; // Filósofo 1, izq palillo 1
 //        palillosFilosofo[0][1] = 4; // Filósofo 1, der palillo 5
 //        palillosFilosofo[1][0] = 1;
@@ -38,10 +47,12 @@ public class Main {
 //        palillosFilosofo[4][0] = 4;
 //        palillosFilosofo[4][1] = 3;
 
-        // En bucle para poder añadir más comensales si así se desease.
+        // Mejora: asignando de forma que se puedan añadir más o menos filósofos.
+        // Los pallilos del filósofo 1 no siguen la norma
         palillosFilosofo[0][0] = 0;
         palillosFilosofo[0][1] = numFilosofos - 1;
 
+        // En el bucle se asignan del mismo modo para todos
         for (int i = 1; i < numFilosofos; i++) {
             palillosFilosofo[i][0] = i;
             palillosFilosofo[i][1] = i - 1;
