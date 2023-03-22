@@ -4,9 +4,6 @@
  */
 package repaso02;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Iván Estévez Sabucedo
@@ -25,7 +22,7 @@ public class ContarApp {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException ex) {
-            Logger.getLogger(ContarApp.class.getName()).log(Level.SEVERE, null, ex);
+            //
         }
 
         ContarThread hilo2 = new ContarThread(10);
@@ -36,7 +33,7 @@ public class ContarApp {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(ContarApp.class.getName()).log(Level.SEVERE, null, ex);
+                //
             }
         }
 
@@ -44,7 +41,7 @@ public class ContarApp {
             hilo1.join();
             hilo2.join();
         } catch (InterruptedException ex) {
-            Logger.getLogger(ContarApp.class.getName()).log(Level.SEVERE, null, ex);
+            //
         }
         
         System.out.println("Acabé.");
