@@ -4,9 +4,6 @@
  */
 package repaso01;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  * Diseña un programa que simule la gestión de un punto de venta con tres
  * terminales que acceden a un objeto Cajero que mantiene la cuenta de las
@@ -42,7 +39,7 @@ public class MainCajero {
             t2.join();
             t3.join();
         } catch (InterruptedException ex) {
-            Logger.getLogger(MainCajero.class.getName()).log(Level.SEVERE, null, ex);
+            //
         }
         System.out.println("Localidades vendidas: "+cajero.mostrarLocalidades());
 
