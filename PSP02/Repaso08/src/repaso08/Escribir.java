@@ -12,7 +12,6 @@ public class Escribir extends Thread {
 
     private StringBuilder sb;
     private char c;
-    private boolean escribiendo = false;
 
     public Escribir(StringBuilder sb, char c) {
         this.sb = sb;
