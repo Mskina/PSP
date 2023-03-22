@@ -4,9 +4,6 @@
  */
 package repaso04;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Iván Estévez Sabucedo
@@ -28,7 +25,7 @@ public class Consumidor extends Thread {
             try {
                 Thread.sleep(400);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
+                //
             }
         }
     }
