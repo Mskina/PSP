@@ -6,8 +6,6 @@ package repaso04;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -27,7 +25,7 @@ public class Buffer {
             try {
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, ex);
+                //
             }
         }
         this.lista.add(c);
@@ -39,7 +37,7 @@ public class Buffer {
             try {
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(Buffer.class.getName()).log(Level.SEVERE, null, ex);
+                //
             }
         }
         notifyAll();
