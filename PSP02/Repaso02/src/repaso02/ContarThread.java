@@ -4,9 +4,6 @@
  */
 package repaso02;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Iván Estévez Sabucedo
@@ -26,7 +23,7 @@ public class ContarThread extends Thread {
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(ContarThread.class.getName()).log(Level.SEVERE, null, ex);
+                //
             }
         }
     }
