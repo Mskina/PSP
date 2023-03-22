@@ -4,9 +4,6 @@
  */
 package repaso04;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Iván Estévez Sabucedo
@@ -25,7 +22,7 @@ public class Caja {
             try {
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(Caja.class.getName()).log(Level.SEVERE, null, ex);
+                //
             }
         }
         this.c = c;
@@ -38,7 +35,7 @@ public class Caja {
             try {
                 wait();
             } catch (InterruptedException ex) {
-                Logger.getLogger(Caja.class.getName()).log(Level.SEVERE, null, ex);
+                //
             }
         }
         char leido = this.c;
