@@ -1,7 +1,5 @@
 package bol1_ejercicio3;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
