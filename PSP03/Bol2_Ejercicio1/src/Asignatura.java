@@ -1,4 +1,6 @@
-public class Asignatura {
+import java.io.Serializable;
+
+public class Asignatura implements Serializable {
     private int id;
     private String nombreAsig;
 

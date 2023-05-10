@@ -1,4 +1,6 @@
-public class Especialidad {
+import java.io.Serializable;
+
+public class Especialidad implements Serializable {
     private int id;
     private String nombreEsp;
 

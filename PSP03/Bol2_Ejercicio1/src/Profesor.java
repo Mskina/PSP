@@ -1,4 +1,6 @@
-public class Profesor {
+import java.io.Serializable;
+
+public class Profesor implements Serializable {
 
     private int idProfesor;
     private String nombre;
@@ -45,5 +47,13 @@ public class Profesor {
 
     public void setEsp(Especialidad esp) {
         this.esp = esp;
+    }
+
+    @Override
+    public String toString() {
+        return "Profesor{" +
+                "idProfesor=" + idProfesor +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }
