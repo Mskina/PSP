@@ -1,16 +1,19 @@
+
 import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Scanner;
 
 /**
- * Crea un programa cliente en el que se introduzca por teclado el idProfesor que se desea consultar. Dicho programa
- * recogerá datos hasta recibir un * por parte del usuario. Si el idProfesor no se encuentra registrado, el servidor
+ * Crea un programa cliente en el que se introduzca por teclado el idProfesor
+ * que se desea consultar. Dicho programa recogerá datos hasta recibir un * por
+ * parte del usuario. Si el idProfesor no se encuentra registrado, el servidor
  * le devolverá un objeto Profesor con datos vacíos.
  */
 public class Cliente {
 
     final static String FIN = "*";
+
     public static void main(String[] args) {
         try {
             String host = "localhost";
@@ -59,19 +62,10 @@ public class Cliente {
             flujoSalida.close();
             cliente.close();
 
-
-
-
-
         } catch (Exception e) {
             System.out.println("Se murió.");
         }
 
-
     }
-
-
-
-
 
 }

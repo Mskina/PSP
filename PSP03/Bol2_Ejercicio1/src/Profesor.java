@@ -51,9 +51,8 @@ public class Profesor implements Serializable {
 
     @Override
     public String toString() {
-        return "Profesor{" +
-                "idProfesor=" + idProfesor +
-                ", nombre='" + nombre + '\'' +
-                '}';
+        return "Profesor{" + "idProfesor=" + idProfesor + ", nombre=" + nombre + ", asignaturas=" + asignaturas + ", esp=" + esp + '}';
     }
+
+    
 }

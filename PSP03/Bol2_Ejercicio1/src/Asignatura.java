@@ -27,4 +27,11 @@ public class Asignatura implements Serializable {
     public void setNombreAsig(String nombreAsig) {
         this.nombreAsig = nombreAsig;
     }
+
+    @Override
+    public String toString() {
+        return "Asignatura{" + "id=" + id + ", nombreAsig=" + nombreAsig + '}';
+    }
+    
+    
 }

@@ -24,4 +24,11 @@ public class Especialidad implements Serializable {
     public void setNombreEsp(String nombreEsp) {
         this.nombreEsp = nombreEsp;
     }
+
+    @Override
+    public String toString() {
+        return "Especialidad{" + "id=" + id + ", nombreEsp=" + nombreEsp + '}';
+    }
+    
+    
 }

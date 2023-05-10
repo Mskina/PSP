@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -7,10 +8,12 @@ public class Servidor {
     final static String FIN = "*";
 
     /**
-     * Utilizando sockets TCP, implementar un programa servidor que inicialice un array de 5 objetos de tipo Profesor.
-     * El servidor aceptará conexiones de clientes en un bucle infinito. Cada vez qye se conecte un cliente, el servidor
-     * le asignará un id, que empezará en 1 e irá incrementándose cada vez que se conecte un nuevo cliente. El servidor
-     * recibirá del cliente un idProfesor y le devolverá el objeto Profesor asociado.
+     * Utilizando sockets TCP, implementar un programa servidor que inicialice
+     * un array de 5 objetos de tipo Profesor. El servidor aceptará conexiones
+     * de clientes en un bucle infinito. Cada vez que se conecte un cliente, el
+     * servidor le asignará un id, que empezará en 1 e irá incrementándose cada
+     * vez que se conecte un nuevo cliente. El servidor recibirá del cliente un
+     * idProfesor y le devolverá el objeto Profesor asociado.
      *
      * @param args
      */
@@ -24,23 +27,23 @@ public class Servidor {
         Asignatura asignatura3 = new Asignatura(3, "Asignatura 3");
         Asignatura asignatura4 = new Asignatura(4, "Asignatura 4");
 
-        Asignatura[] asignaturasProfesor1 = new Asignatura[2];
+        Asignatura[] asignaturasProfesor1 = new Asignatura[3];
         asignaturasProfesor1[0] = asignatura2;
         asignaturasProfesor1[1] = asignatura4;
 
-        Asignatura[] asignaturasProfesor2 = new Asignatura[2];
+        Asignatura[] asignaturasProfesor2 = new Asignatura[3];
         asignaturasProfesor2[0] = asignatura1;
         asignaturasProfesor2[1] = asignatura2;
 
-        Asignatura[] asignaturasProfesor3 = new Asignatura[2];
+        Asignatura[] asignaturasProfesor3 = new Asignatura[3];
         asignaturasProfesor3[0] = asignatura3;
         asignaturasProfesor3[1] = asignatura4;
 
-        Asignatura[] asignaturasProfesor4 = new Asignatura[2];
+        Asignatura[] asignaturasProfesor4 = new Asignatura[3];
         asignaturasProfesor4[0] = asignatura1;
         asignaturasProfesor4[1] = asignatura4;
 
-        Asignatura[] asignaturasProfesor5 = new Asignatura[2];
+        Asignatura[] asignaturasProfesor5 = new Asignatura[3];
         asignaturasProfesor5[0] = asignatura2;
         asignaturasProfesor5[1] = asignatura3;
 
@@ -73,11 +76,9 @@ public class Servidor {
 //        Especialidad[] especialidadesProfesor5 = new Especialidad[2];
 //        especialidadesProfesor5[0] = especialidad2;
 //        especialidadesProfesor5[1] = especialidad3;
-
         /**
          * Creo los profesores
          */
-
         Profesor profesor1 = new Profesor(1, "Profesor 1", asignaturasProfesor1, especialidad1);
         Profesor profesor2 = new Profesor(2, "Profesor 2", asignaturasProfesor2, especialidad2);
         Profesor profesor3 = new Profesor(3, "Profesor 3", asignaturasProfesor3, especialidad3);
@@ -138,11 +139,9 @@ public class Servidor {
             flujoSalida.close();
             flujoEntrada.close();
 
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
     }
 
