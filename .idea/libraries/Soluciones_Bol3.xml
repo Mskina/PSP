@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Soluciones_Bol3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PSP02/Soluciones/Soluciones_Bol3/Ej3_Fichero.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PSP02/Soluciones/Soluciones_Bol3/Ej4_Orden.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PSP02/Soluciones/Soluciones_Bol3/Ej1_Clase.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PSP02/Soluciones/Soluciones_Bol3/Ej2_Cola.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

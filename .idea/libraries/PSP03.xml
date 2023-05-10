@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="PSP03">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PSP03/03_Ejemplos.zip!/" />
+      <root url="jar://$PROJECT_DIR$/PSP03/05_Boletin1_Sockets_Soluciones.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
