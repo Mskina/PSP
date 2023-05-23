@@ -1,4 +1,6 @@
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
@@ -29,21 +31,17 @@ public class Servidor {
         String msgRecibido = "";
         byte[] buf = new byte[1024];
         
-        String mensajeEnviado = "test";
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        String cadena = "";
 
-        while (!msgRecibido.trim().equals("CERRAR")) {
-
-            // Recibo un paquete
-            DatagramPacket paquete = new DatagramPacket(buf, buf.length);
-            ms.receive(paquete);
-            msgRecibido = new String(paquete.getData(), 0, paquete.getLength());
-            System.out.println("En el servidor se ha conectado " + msgRecibido);
-            
+        while (!cadena.trim().equals("CERRAR")) {
+            System.out.print("Datos a enviar al grupo: ");
+            cadena = in.readLine();            
             
             // Y lo envío a todos
-            DatagramPacket paqueteEnviado = new DatagramPacket(mensajeEnviado.getBytes(), mensajeEnviado.length(), grupo, puerto);
+            DatagramPacket paqueteEnviado = new DatagramPacket(cadena.getBytes(), cadena.length(), grupo, puerto);
             ms.send(paqueteEnviado);
-            System.out.println("Enviado el sigueinte mensaje al grupo: " + mensajeEnviado);
+            System.out.println("Enviado el siguiente mensaje al grupo: " + cadena);
         }
         ms.close(); // Cierro socket
         System.out.println("Socket cerrado.");

@@ -55,7 +55,7 @@ public class Cliente {
             
             // Pasamos el paquete a string y la mostramos por pantalla
             msg = new String(paquete.getData(), 0, paquete.getLength());
-            System.out.println("Recibo: " + msg);
+            System.out.println("Recibo [" + paquete.getSocketAddress() + "] " + msg);
         }
         ms.leaveGroup(sock, NetworkInterface.getByInetAddress(grupo)); // abandonamos grupo
         ms.close();

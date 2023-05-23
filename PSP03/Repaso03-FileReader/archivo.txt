@@ -1,0 +1,3 @@
+Contenido del archivo, su primera línea. Sigue siendo primera.
+Aquí es segunda;
+y aquí la tercera
