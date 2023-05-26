@@ -45,7 +45,7 @@ public class Cliente {
             System.out.println("4. Especialista");
 
             int tipo = 0;
-            while (!(tipo > 1 && tipo < 5)) {
+            while (!(tipo >= 1 && tipo < 5)) {
                 System.out.println("Escribe el número que corresponde al cargo elegido: ");
                 while (!scan.hasNextInt()) {
                     scan.next();
